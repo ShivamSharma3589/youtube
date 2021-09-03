@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons/logo.png" type="image/x-icon">
+    <title>YouTube</title>
+</head>
+
+<body>
+
+    <!-- header goes here  -->
+    <header>
+        <div>
+            <img src="icons/logo.png">
+            YouTube
+        </div>
+        <div>
+            <i class="fa-solid fa-screencast"></i>
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <img src="icons/user.jpg">
+        </div>
+    </header>
+
+    <!-- navbar goes here  -->
+    <nav>
+        <a href="#"><i class="fa fa-compass"></i> Explore</a>
+        <a href="#">All</a>
+        <a href="#">HTML</a>
+        <a href="#">CSS</a>
+        <a href="#">javaScript</a>
+        <a href="#">Avengers</a>
+        <a href="#">TVD</a>
+        <a href="#">originals</a>
+        <a href="#">Lucifer</a>
+        <a href="#">carnage</a>
+        <a href="#">Shang...</a>
+        <a href="#">Eternals</a>
+    </nav>
+
+    <!-- main videos content goes here  -->
+    <article id="article">
+
+    </article>
+
+    <!-- player section goes here  -->
+    <div id="player-section">
+        <div id="video-player">
+            <div id="video-section">
+                <video src="videos/lucifer.mp4"></video>
+                <div id="flex"></div>
+                <i id="close" class="far fa-angle-down"></i>
+                <i id="backward" class="fas fa-backward"></i>
+                <i id="playButton" class="fas fa-pause"></i>
+                <i id="forward" class="fas fa-forward"></i>
+                <img id="fullscreen" src="icons/fullscreen.png">
+                <div id="timer"></div>
+            </div>
+            <div id="scale">
+                <div id="fill"></div>
+            </div>
+        </div>
+
+        <div id="list-content">
+            <div id="details-container">
+                <div>
+                    <div id="player-title"></div>
+                    <div id="player-views"></div>
+                </div>
+                <div id="downButton">
+                    <i class="far fa-angle-down"></i>
+                </div>
+            </div>
+            <div id="player-icons">
+                <div>
+                    <i class="fal fa-thumbs-up"></i>
+                    <div class="icons-title" id="likes">40K</div>
+                </div>
+                <div>
+                    <i class="fal fa-thumbs-down"></i>
+                    <div class="icons-title" id="dislikes">184</div>
+                </div>
+                <div>
+                    <i class="fal fa-share"></i>
+                    <div class="icons-title">Share</div>
+                </div>
+                <div>
+                    <a id="download" download href="#"><i class="fal fa-arrow-to-bottom"></i></a>
+                    <div class="icons-title">Download</div>
+                </div>
+                <div>
+                    <i class="fal fa-plus-square"></i>
+                    <div class="icons-title">Save</div>
+                </div>
+            </div>
+            <div id="player-logo">
+                <div>
+                    <img id="player-logo-image" src="logos/netflix.jpg">
+                </div>
+                <div>
+                    <div id="channel-name">Netflix</div>
+                    <div id="subscriber">14.3M subscribers</div>
+                </div>
+                <div id="subscribe">SUBSCRIBE</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- fullscreen mode goes here  -->
+    <div id="fullscreen-mode">
+        <video src="videos/lucifer.mp4" id="fullscreen-video"></video>
+        <i id="fullscreen-close" class="far fa-angle-down"></i>
+        <div id="fullscreen-title"></div>
+        <i id="fullscreen-backward" class="fas fa-backward"></i>
+        <i id="fullscreen-playButton" class="fas fa-pause"></i>
+        <i id="fullscreen-forward" class="fas fa-forward"></i>
+        <div id="fullscreen-timer"></div>
+        <input type="range" id="input">
+        <img src="icons/exitfullscreen.png" id="exit-fullscreen">
+    </div>
+
+    <!-- footer goes here  -->
+    <footer>
+        <div>
+            <img src="icons/home.png">
+            <div>Home</div>
+        </div>
+        <div>
+            <img src="icons/short.jpg">
+            <div>Shorts</div>
+        </div>
+        <div> <i class="fal fa-plus-circle"></i> </div>
+        <div>
+            <img src="icons/subscription.jpg">
+            <div>Subscription</div>
+        </div>
+        <div>
+            <img src="icons/library.jpg">
+            <div>Library</div>
+        </div>
+    </footer>
+</body>
+<script src="main.js"></script>
+
+</html>

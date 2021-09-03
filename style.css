@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: black;
+    height: 100vh;
+    color: white;
+}
+
+/* header goes here  */
+header {
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    position: fixed;
+}
+header>div {
+    display: flex;
+    align-items: center;
+    width: max-content;
+}
+header>div:first-child {
+    color: rgba(255, 255, 255, 0.321);
+    display: flex;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+}
+header>div:first-child img {
+    width: 1.8rem;
+    margin-right: 0.2rem;
+}
+header>div:last-child i {
+    padding-right: 1.5rem;
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: white;
+}
+header>div:last-child img {
+    width: 1.6rem;
+    border-radius: 50%;
+}
+
+/* navbar goes here  */
+nav {
+    position: fixed;
+    top: 2.8rem;
+    height: 2.7rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: black;
+    overflow-x: scroll;
+}
+nav::-webkit-scrollbar {
+    display: none;
+}
+nav a {
+    color: rgba(255, 255, 255, 0.856);
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    padding: .2rem .4rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    margin-right: 0.5rem;
+    display: flex;
+}
+nav a:first-child {
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 0;
+}
+nav a:nth-child(2) {
+    background-color: grey;
+}
+
+/* content goes here  */
+article {
+    padding: 6rem 0 5rem;
+}
+section {
+    margin-top: .5rem;
+}
+
+/* videos logos and content section  */
+.data {
+    display: flex;
+    align-items: center;
+}
+.text {
+    width: 100%;
+}
+.text>div {
+    padding: 2px 0;
+}
+.text>div:first-child {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.text>div:last-child {
+    font-size: .8rem;
+    color: rgba(255, 255, 255, 0.671);
+}
+
+/* main thumbnail image  */
+.thumbnail img {
+    width: 100%;
+}
+.logo img {
+    width: 2rem;
+    margin: .7rem;
+    border-radius: 50%;
+}
+
+/* three dots icons is here  */
+.dots {
+    padding: 0 .5rem;
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+/* video player section goes here  */
+#player-section {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    animation: playerAnimation .3s ease-in-out;
+    z-index: 5;
+    display: none;
+}
+#video-player video {
+    width: 100%;
+    margin: .2rem 0;
+    z-index: 5;
+}
+#video-section {
+    position: relative;
+}
+#flex {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.456);
+    display: block;
+}
+#playButton, #forward, #backward {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+#playButton {
+    font-size: 3rem;
+}
+#forward {
+    left: 75%;
+    transform: translate(-75%, -50%);
+}
+#backward {
+    left: 25%;
+    transform: translate(-25%, -50%);
+}
+#close {
+    position: absolute;
+    top: 0.5rem;
+    left: .5rem;
+    z-index: 15;
+    padding: 0.4rem 1rem;
+}
+#timer {
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: .8rem;
+    left: 0.8rem;
+}
+#fullscreen {
+    filter: invert(100%);
+    position: absolute;
+    bottom: .8rem;
+    right: 0.8rem;
+    z-index: 15;
+}
+#scale {
+    background-color: rgba(255, 255, 255, 0.116);
+    width: 100%;
+}
+#fill {
+    height: 2px;
+    width: 50%;
+    background-color: rgba(255, 0, 0, 1);
+}
+
+/* details of player section goes here  */
+#details-container {
+    display: flex;
+    justify-content: space-between;
+}
+#details-container>div:first-child {
+    padding: .1rem .5rem;
+}
+#player-title {
+    color: rgba(255, 255, 255, 0.938);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+#player-views {
+    color: rgba(255, 255, 255, 0.522);
+    margin-top: .25rem;
+    font-size: 0.7rem;
+    margin-top: .4rem;
+}
+#downButton {
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+@keyframes playerAnimation {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+/* icons for like and etc goes here  */
+#player-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 1.5rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+#player-icons>div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#player-icons i {
+    font-size: 1.35rem;
+    text-align: center;
+    margin-bottom: .3rem;
+    font-weight: 100;
+    z-index: 20;
+}
+#player-icons a {
+    color: white;
+    text-align: center;
+}
+.icons-title {
+    font-size: 0.65rem;
+}
+
+/* channel logo goes here  */
+#player-logo {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: .5rem 0;
+}
+
+/* channel logo sizing goes here  */
+#player-logo-image {
+    width: 2rem;
+    border-radius: 50%;
+    margin: 0 .5rem;
+}
+#player-logo>div:nth-child(2) {
+    width: 100%;
+}
+#subscriber {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.582);
+    margin-top: 0.2rem;
+}
+#subscribe {
+    color: red;
+    font-weight: 600;
+    padding: 0 .6rem;
+}
+
+/* next videos suggestion goes here  */
+#list-content {
+    overflow: hidden;
+    height: 70vh;
+    padding-bottom: 10vh;
+    overflow-y: scroll;
+}
+.list-content-thumbnail img {
+    width: 100vw;
+}
+
+/* fullscreen mode goes here   */
+#fullscreen-mode {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+#fullscreen-video {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(90deg);
+}
+#exit-fullscreen, #fullscreen-close, #fullscreen-playButton, #fullscreen-backward, #fullscreen-forward, #fullscreen-close ,#fullscreen-timer{
+    position: absolute;
+    z-index: 1;
+    transform: rotate(90deg);
+    font-size: 2.5rem;
+}
+#fullscreen-timer{
+    font-size: 0.85rem;
+    left: 3vh;
+    top: 2.5rem;
+    color: white;
+}
+#input {
+    position: fixed;
+    top: 50%;
+    left: -45vh;
+    width: 98vh;
+    margin: 0 auto ;
+    transform: rotate(90deg);
+}
+#exit-fullscreen {
+    position: fixed;
+    filter: invert(100%);
+    left: 5vh;
+    bottom: 1rem;
+    padding: .3rem;
+}
+#fullscreen-close {
+    right: 1rem;
+    top: 1rem;
+}
+#fullscreen-playButton{
+    font-size: 3.5rem;
+}
+#fullscreen-forward {
+    bottom: 25%;
+}
+#fullscreen-backward {
+    top: 25%;
+}
+#fullscreen-title{
+    position: fixed;
+    transform: rotate(90deg);
+    bottom: 9rem;
+    right: -25vw;
+    font-size: 0.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+input[type=range] {
+    height: 10px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+    background-color: transparent;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    background: red;
+    border-radius: 10px;
+}
+input[type=range]::-webkit-slider-thumb {
+    height: 10px;
+    width: 10px; 
+    border: 1px solid rgba(255, 255, 255, 0.367);
+    border-radius: 50%;
+    background: #fff;
+    -webkit-appearance: none;
+    margin-top:-4px;
+    box-shadow: 0px 0px 5px black;
+}
+
+/* footer goes here  */
+footer {
+    background-color: rgb(20, 20, 20);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2rem;
+    font-size: .7rem;
+    z-index: 1;
+}
+footer img {
+    width: 1.4rem;
+    margin-bottom: 2px;
+}
+footer>div {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+footer>div:first-child img {
+    filter: invert(100%);
+}
+footer i {
+    font-size: 2rem;
+    font-weight: 100;
+}
